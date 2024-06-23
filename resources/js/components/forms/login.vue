@@ -20,12 +20,12 @@
       </b-form-group>
 
       <b-form-group
-        id="input-group-1"
+        id="input-group-2"
         label="Password:"
-        label-for="input-1"
+        label-for="input-2"
       >
         <b-form-input
-          id="input-1"
+          id="input-2"
           v-model="form.password"
           type="password"
           placeholder="Enter password"
@@ -34,7 +34,7 @@
       </b-form-group>
 
      
-      <b-button type="submit" variant="primary">Sign In</b-button>
+      <b-button type="submit" variant="primary">Sign Up</b-button>
     </b-form>
     
   </div>
@@ -68,15 +68,13 @@
       },
       onSubmit(event) {
         event.preventDefault()
-        alert(JSON.stringify(this.form))
+        this.register();
       },
       onReset(event) {
         event.preventDefault()
         // Reset our form values
         this.form.email = ''
-        this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
+        this.form.password = ''
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {
